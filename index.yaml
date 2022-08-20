@@ -3,12 +3,12 @@ entries:
   betkub-helm-chart:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2022-08-20T10:48:37.856875+07:00"
+    created: "2022-08-20T11:33:03.742679+07:00"
     description: A Generic Betkub Helm chart
-    digest: f737345781ced4808f8305d95e6d2591b60707c4fed16d56a092416ab9ba90c7
+    digest: b20485a9671f7cb41661df7b9446d636ac93702b3d98d0079431a03907031035
     name: betkub-helm-chart
     type: application
     urls:
     - charts/betkub-helm-chart-1.0.0.tgz
     version: 1.0.0
-generated: "2022-08-20T10:48:37.855623+07:00"
+generated: "2022-08-20T11:33:03.742094+07:00"
