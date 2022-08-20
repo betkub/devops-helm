@@ -33,6 +33,7 @@ ingress:
   enabled: false
   class: alb
   albName: ""
+  certificateArn: ""
   hosts: []
 
 hpa:
