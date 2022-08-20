@@ -1,13 +1,13 @@
-name: ""
+name:
 
 replicaCount: 2
 
 image:
-  name: ""
-  tag: ""
+  name:
+  tag:
 
 nodeSelector:
-  tier: ""
+  tier:
 
 resources:
   limits:
