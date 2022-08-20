@@ -32,8 +32,8 @@ affinity: {}
 ingress:
   enabled: false
   class: alb
-  albName: ""
-  certificateArn: ""
+  albName:
+  certificateArn:
   hosts: []
 
 hpa:
