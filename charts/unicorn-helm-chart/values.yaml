@@ -1,0 +1,44 @@
+name:
+
+replicaCount: 2
+
+image:
+  name:
+  tag:
+
+nodeSelector:
+  tier:
+
+resources:
+  limits:
+    cpu: 500m
+    memory: 512Mi
+  requests:
+    cpu: 250m
+    memory: 256Mi
+
+configmap:
+  enabled: false
+
+secret:
+  enabled: false
+
+podAnnotations: []
+
+tolerations: []
+
+affinity: {}
+
+ingress:
+  enabled: false
+  class: alb
+  albName:
+  hosts: []
+
+hpa:
+  minReplicas: 2
+  maxReplicas: 20
+
+containerPort: 3000
+
+healthCheck: /api/stat
