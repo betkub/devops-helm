@@ -14,6 +14,16 @@ entries:
   unicorn-helm-chart:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2022-08-25T17:00:17.675496027Z"
+    description: A Generic Unicorn Helm chart
+    digest: e395cd783880326265bcdf6be2e05f47b34cddd17ba5829cc6c0ea2c51428c26
+    name: unicorn-helm-chart
+    type: application
+    urls:
+    - https://github.com/betkub/devops-helm/releases/download/unicorn-helm-chart-1.0.1/unicorn-helm-chart-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2022-08-22T14:58:02.525425967Z"
     description: A Generic Unicorn Helm chart
     digest: 750a406f18ab1cadbc63e998552f0dba99b780226f0763a6761048da4c6bed16
