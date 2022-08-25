@@ -53,12 +53,12 @@ spec:
             httpGet:
               path: {{ .Values.healthCheck }}
               port: http
-            timeoutSeconds: 10
+            timeoutSeconds: {{ .Values.healthCheckTimeout }}
           readinessProbe:
             httpGet:
               path: {{ .Values.healthCheck }}
               port: http
-            timeoutSeconds: 10
+            timeoutSeconds: {{ .Values.healthCheckTimeout }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}

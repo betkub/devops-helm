@@ -42,3 +42,5 @@ hpa:
 containerPort: 3000
 
 healthCheck: /api/stat
+
+healthCheckTimeout: 10
