@@ -11,6 +11,17 @@ entries:
     urls:
     - charts/betkub-helm-chart-1.0.0.tgz
     version: 1.0.0
+  huaylike-helm-chart:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2022-08-26T16:13:24.542591112Z"
+    description: A Generic Huaylike Helm chart
+    digest: 156bad780b7caa3ef03d368a8f30ec6dd6d1e6600ebebef8b442076db995bdfd
+    name: huaylike-helm-chart
+    type: application
+    urls:
+    - https://github.com/betkub/devops-helm/releases/download/huaylike-helm-chart-1.0.0/huaylike-helm-chart-1.0.0.tgz
+    version: 1.0.0
   unicorn-helm-chart:
   - apiVersion: v2
     appVersion: 1.0.0
