@@ -10,4 +10,5 @@ helm repo add devops-helm https://betkub.github.io/devops-helm/
 - betkub-helm-chart
 - huaylike-helm-chart
 - unicorn-helm-chart
+- chat-helm-chart
 ```
