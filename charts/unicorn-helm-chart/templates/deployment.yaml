@@ -7,7 +7,6 @@ metadata:
   annotations:
     reloader.stakater.com/auto: "true"
 spec:
-  replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
       app: {{ .Values.name }}
@@ -32,10 +31,16 @@ spec:
                   values:
                   - "{{ .Values.name }}"
               topologyKey: "kubernetes.io/hostname"
+      shareProcessNamespace: true
       containers:
         - name: {{ .Values.name }}
           image: "{{ .Values.image.name }}:{{ .Values.image.tag }}"
           imagePullPolicy: IfNotPresent
+          command: [ "sh", "-c"]
+          args:
+          - "source /vault/secrets/{{ .Values.name }} && {{ .Values.command }}"
+          securityContext:
+            allowPrivilegeEscalation: false
           envFrom:
           {{- if .Values.configmap.enabled }}
           - configMapRef:
@@ -73,3 +78,8 @@ spec:
       tolerations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
+      securityContext:
+        fsGroup: 65534
+        runAsNonRoot: true
+        runAsUser: 101
+      serviceAccountName: {{ .Values.serviceAccountName }}

@@ -1,7 +1,5 @@
 name:
 
-replicaCount: 2
-
 image:
   name:
   tag:
@@ -23,7 +21,11 @@ configmap:
 secret:
   enabled: false
 
-podAnnotations: []
+podAnnotations:
+  vault.hashicorp.com/agent-inject: 'true'
+  vault.hashicorp.com/agent-configmap: ''
+  vault.hashicorp.com/template-static-secret-render-interval: "1m"
+  vault.hashicorp.com/agent-run-as-user: '101'
 
 tolerations: []
 
@@ -44,3 +46,13 @@ containerPort: 3000
 healthCheck: /api/stat
 
 healthCheckTimeout: 10
+
+command:
+
+serviceAccountName: internal-app
+
+vaultRole:
+
+vaultPath:
+
+vaultAgentConfigmap:
