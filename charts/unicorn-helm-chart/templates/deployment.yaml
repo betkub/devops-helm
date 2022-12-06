@@ -38,7 +38,7 @@ spec:
           imagePullPolicy: IfNotPresent
           command: [ "sh", "-c"]
           args:
-          - "source /vault/secrets/{{ .Values.name }} && {{ .Values.command }}"
+          - "source /vault/secrets/{{ .Values.vaultAgentConfigmap }} && {{ .Values.command }}"
           securityContext:
             allowPrivilegeEscalation: false
           envFrom:

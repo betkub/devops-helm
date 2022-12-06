@@ -31,11 +31,11 @@ data:
 
     "template" = {
       "contents" = <<EOH
-        {{- with secret "{{ .Values.vaultPath}}/{{ .Values.vaultAgentConfigmap}}" -}}
-          {{ range $k, $v := .Data.data }}
-            export {{ $k }}={{ $v }}
-          {{ end }}
-        {{- end }}
+        {{`{{- with secret "{{ .Values.vaultPath}}/{{ .Values.vaultAgentConfigmap}}" -}}`}}
+          {{`{{ range $k, $v := .Data.data }}`}}
+            {{`export {{ $k }}={{ $v }}`}}
+          {{`{{ end }}`}}
+        {{`{{- end }}`}}
       EOH
       "destination" = "/vault/secrets/{{ .Values.vaultAgentConfigmap}}"
       "command" = "sh -c 'kill $(pidof node)'"
@@ -67,11 +67,11 @@ data:
 
     "template" = {
       "contents" = <<EOH
-        {{- with secret "{{ .Values.vaultPath}}/{{ .Values.vaultAgentConfigmap}}" -}}
-          {{ range $k, $v := .Data.data }}
-            export {{ $k }}={{ $v }}
-          {{ end }}
-        {{- end }}
+        {{`{{- with secret "{{ .Values.vaultPath}}/{{ .Values.vaultAgentConfigmap}}" -}}`}}
+          {{`{{ range $k, $v := .Data.data }}`}}
+            {{`export {{ $k }}={{ $v }}`}}
+          {{`{{ end }}`}}
+        {{`{{- end }}`}}
       EOH
       "destination" = "/vault/secrets/{{ .Values.vaultAgentConfigmap}}"
     }
