@@ -34,6 +34,16 @@ entries:
   chat-helm-chart:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2022-12-09T09:02:03.436017854Z"
+    description: A Generic Chat Helm chart
+    digest: 2663cff455a278ae091f86ce060a5cbdd6b2aa12880056deee214d382d051310
+    name: chat-helm-chart
+    type: application
+    urls:
+    - https://github.com/betkub/devops-helm/releases/download/chat-helm-chart-1.0.1/chat-helm-chart-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2022-09-20T08:57:03.632971649Z"
     description: A Generic Chat Helm chart
     digest: f83f3e137644c5d4870d4a358f4a3e9b245c365ed0878e26c1f0ef1b7df18854
