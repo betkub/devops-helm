@@ -1,6 +1,6 @@
 apiVersion: v2
 name: betkub-helm-chart
-description: A Generic Betkub Helm chart
+description: A Generic Betkub Helm chart integrate vault
 type: application
-version: 1.0.1
+version: 1.0.2
 appVersion: "1.0.0"
