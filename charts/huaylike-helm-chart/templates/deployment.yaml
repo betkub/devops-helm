@@ -36,15 +36,6 @@ spec:
         - name: {{ .Values.name }}
           image: "{{ .Values.image.name }}:{{ .Values.image.tag }}"
           imagePullPolicy: IfNotPresent
-          envFrom:
-          {{- if .Values.configmap.enabled }}
-          - configMapRef:
-              name: {{ .Values.name }}
-          {{- end }}
-          {{- if .Values.secret.enabled }}
-          - secretRef:
-              name: {{ .Values.name }}
-          {{- end }}
           command: [ "sh", "-c"]
           args:
           - "source /vault/secrets/{{ .Values.vaultAgentConfigmap }} && {{ .Values.command }}"
