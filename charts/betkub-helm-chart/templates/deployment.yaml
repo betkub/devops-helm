@@ -79,7 +79,7 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       securityContext:
-        fsGroup: 65534
+        fsGroup: {{ .Values.fsGroup | default 65534 }}
         runAsNonRoot: true
-        runAsUser: 101
+        runAsUser: {{ .Values.runAsUser | default 101 }}
       serviceAccountName: {{ .Values.serviceAccountName }}

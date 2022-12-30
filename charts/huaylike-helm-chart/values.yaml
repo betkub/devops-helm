@@ -57,6 +57,6 @@ vaultPath:
 
 vaultAgentConfigmap:
 
-runAsUser: 1001
+runAsUser: 101
 
-fsGroup: 1001
+fsGroup: 101
