@@ -1,6 +1,6 @@
 apiVersion: v2
 name: chat-helm-chart
-description: A Generic Chat Helm chart integrate vault
+description: A Generic Chat Helm chart
 type: application
-version: 1.0.2
+version: 1.0.0
 appVersion: "1.0.0"
