@@ -31,6 +31,17 @@ entries:
     urls:
     - charts/betkub-helm-chart-1.0.0.tgz
     version: 1.0.0
+  chat-helm-chart:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2023-02-20T07:12:51.561998105Z"
+    description: A Generic Chat Helm chart
+    digest: d3f5bfc44f03380c2151ee6e05e71197c15582dfa73712c0b77eb002037f4e87
+    name: chat-helm-chart
+    type: application
+    urls:
+    - https://github.com/betkub/devops-helm/releases/download/chat-helm-chart-1.0.0/chat-helm-chart-1.0.0.tgz
+    version: 1.0.0
   huaylike-helm-chart:
   - apiVersion: v2
     appVersion: 1.0.0
