@@ -1,5 +1,7 @@
 name:
 
+replicaCount: 2
+
 image:
   name:
   tag:
