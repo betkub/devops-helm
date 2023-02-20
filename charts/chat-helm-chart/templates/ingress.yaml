@@ -6,9 +6,13 @@ metadata:
   labels:
     app: {{ .Values.name }}
   annotations:
+    alb.ingress.kubernetes.io/load-balancer-name: {{ .Values.ingress.albName }}
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-type: ip
-    alb.ingress.kubernetes.io/group.name: {{ .Values.ingress.albName }}
+    alb.ingress.kubernetes.io/group.name: {{ .Values.ingress.groupName }}
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
+    alb.ingress.kubernetes.io/ssl-redirect: '443'
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-southeast-1:716687806003:certificate/c989cac6-065f-494a-82df-f664cf98eae0
 spec:
   ingressClassName: {{ .Values.ingress.class }}
   rules:

@@ -1,7 +1,5 @@
 name:
 
-replicaCount: 2
-
 image:
   name:
   tag:
@@ -33,6 +31,7 @@ ingress:
   enabled: false
   class: alb
   albName:
+  groupName: 
   hosts: []
 
 hpa:
