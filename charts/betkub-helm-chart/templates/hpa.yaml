@@ -13,11 +13,11 @@ spec:
   maxReplicas: {{ .Values.hpa.maxReplicas }}
   metrics:
     - type: Resource
-    resource:
-      name: cpu
-      target:
-        type: Utilization
-        averageUtilization: 80
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: 80
     - type: Resource
       resource:
         name: memory
