@@ -12,4 +12,4 @@ helm repo add devops-helm https://betkub.github.io/devops-helm/
 - unicorn-helm-chart
 - chat-helm-chart
 ```
-Add betkub-helm-chart-v1.0.3
+Update betkub-helm-chart-v1.0.3 HPA
