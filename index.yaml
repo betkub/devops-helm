@@ -55,6 +55,16 @@ entries:
   huaylike-helm-chart:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2023-05-30T10:50:44.22251098Z"
+    description: A Generic Huaylike Helm chart integrate vault
+    digest: 0ab32753293daa840f415e35e7e8c44b7ce46bc5ce1468384867f1e35b9c7b32
+    name: huaylike-helm-chart
+    type: application
+    urls:
+    - https://github.com/betkub/devops-helm/releases/download/huaylike-helm-chart-1.0.3/huaylike-helm-chart-1.0.3.tgz
+    version: 1.0.3
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2022-12-09T08:59:53.772984382Z"
     description: A Generic Huaylike Helm chart integrate vault
     digest: ca63f7cebb42cf24cc926f22b326ebfae03d35089fd2416e1b58217926f3786b
