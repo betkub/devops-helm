@@ -31,16 +31,10 @@ spec:
                   values:
                   - "{{ .Values.name }}"
               topologyKey: "kubernetes.io/hostname"
-      shareProcessNamespace: true
       containers:
         - name: {{ .Values.name }}
           image: "{{ .Values.image.name }}:{{ .Values.image.tag }}"
           imagePullPolicy: IfNotPresent
-          command: [ "sh", "-c"]
-          args:
-          - "source /vault/secrets/{{ .Values.vaultAgentConfigmap }} && {{ .Values.command }}"
-          securityContext:
-            allowPrivilegeEscalation: false
           envFrom:
           {{- if .Values.configmap.enabled }}
           - configMapRef:
@@ -58,14 +52,18 @@ spec:
             httpGet:
               path: {{ .Values.healthCheck }}
               port: http
-            timeoutSeconds: {{ .Values.healthCheckTimeout }}
+            timeoutSeconds: 10
           readinessProbe:
             httpGet:
               path: {{ .Values.healthCheck }}
               port: http
-            timeoutSeconds: {{ .Values.healthCheckTimeout }}
+            timeoutSeconds: 10
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+      dnsConfig:
+        options:
+        - name: ndots
+          value: "3"
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
@@ -78,8 +76,3 @@ spec:
       tolerations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      securityContext:
-        fsGroup: {{ .Values.fsGroup | default 65534 }}
-        runAsNonRoot: true
-        runAsUser: {{ .Values.runAsUser | default 101 }}
-      serviceAccountName: {{ .Values.serviceAccountName }}
