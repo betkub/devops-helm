@@ -3,6 +3,16 @@ entries:
   betkub-helm-chart:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2023-12-18T06:56:45.292347729Z"
+    description: A Generic Betkub Helm chart support HPA v2
+    digest: 65c163f7373e84d8ca8b56dd8215da5613ec64439df41605c82a6749ab2f0769
+    name: betkub-helm-chart
+    type: application
+    urls:
+    - https://github.com/betkub/devops-helm/releases/download/betkub-helm-chart-1.0.4/betkub-helm-chart-1.0.4.tgz
+    version: 1.0.4
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2022-12-08T07:16:54.784996373Z"
     description: A Generic Betkub Helm chart
     digest: 53fdf866dad9b6bd3ae8d9a2a4184b08070529ef0bf6ff0abbe7496446080c0b
@@ -22,6 +32,16 @@ entries:
     - charts/betkub-helm-chart-1.0.0.tgz
     version: 1.0.0
   chat-helm-chart:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2023-12-18T06:56:45.424023219Z"
+    description: A Generic Chat Helm chart support HPA v2
+    digest: a68a6926756cbb860bf27cc9d3fac711fc42627e0d9fc90652fd7a9e944995ec
+    name: chat-helm-chart
+    type: application
+    urls:
+    - https://github.com/betkub/devops-helm/releases/download/chat-helm-chart-1.0.4/chat-helm-chart-1.0.4.tgz
+    version: 1.0.4
   - apiVersion: v2
     appVersion: 1.0.0
     created: "2023-02-20T07:41:02.147889749Z"
@@ -45,6 +65,16 @@ entries:
   huaylike-helm-chart:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2023-12-18T06:56:45.56320883Z"
+    description: A Generic Huaylike Helm chart support HPA v2
+    digest: b1148ff4d003b10d0035fdde495ec524ae2da7af972dfbeb810f38f826053c0f
+    name: huaylike-helm-chart
+    type: application
+    urls:
+    - https://github.com/betkub/devops-helm/releases/download/huaylike-helm-chart-1.0.4/huaylike-helm-chart-1.0.4.tgz
+    version: 1.0.4
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2022-09-29T04:27:24.400476976Z"
     description: A Generic Huaylike Helm chart
     digest: 41e153dc3aa109ce56208c798aec6c728e437b2c307f7d62a5411f6529e16897
@@ -64,6 +94,16 @@ entries:
     - https://github.com/betkub/devops-helm/releases/download/huaylike-helm-chart-1.0.0/huaylike-helm-chart-1.0.0.tgz
     version: 1.0.0
   unicorn-helm-chart:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2023-12-18T06:56:45.743588607Z"
+    description: A Generic Unicorn Helm chart support HPA v2
+    digest: a17786ccbb895e4adde981e2fd13439941187f64a42c649e1a9d35a58136d20a
+    name: unicorn-helm-chart
+    type: application
+    urls:
+    - https://github.com/betkub/devops-helm/releases/download/unicorn-helm-chart-1.0.4/unicorn-helm-chart-1.0.4.tgz
+    version: 1.0.4
   - apiVersion: v2
     appVersion: 1.0.0
     created: "2022-08-25T17:00:17.675496027Z"
