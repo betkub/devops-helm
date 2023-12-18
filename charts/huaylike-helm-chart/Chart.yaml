@@ -1,6 +1,6 @@
 apiVersion: v2
 name: huaylike-helm-chart
-description: A Generic Huaylike Helm chart integrate vault
+description: A Generic Huaylike Helm chart support HPA v2
 type: application
 version: 1.0.2
 appVersion: "1.0.0"

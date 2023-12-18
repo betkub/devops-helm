@@ -1,6 +1,6 @@
 apiVersion: v2
 name: unicorn-helm-chart
-description: A Generic Unicorn Helm chart integrate vault
+description: A Generic Unicorn Helm chart support HPA v2
 type: application
-version: 1.0.2
+version: 1.0.4
 appVersion: "1.0.0"
