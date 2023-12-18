@@ -3,26 +3,6 @@ entries:
   betkub-helm-chart:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2023-05-30T16:30:21.082012309Z"
-    description: A Generic Betkub Helm chart
-    digest: d854dd02d5537e0c6e93171841b7c2aaee2cc624f376e6e0a81a5b781a2c79ac
-    name: betkub-helm-chart
-    type: application
-    urls:
-    - https://github.com/betkub/devops-helm/releases/download/betkub-helm-chart-1.0.3/betkub-helm-chart-1.0.3.tgz
-    version: 1.0.3
-  - apiVersion: v2
-    appVersion: 1.0.0
-    created: "2022-12-09T09:01:08.838607304Z"
-    description: A Generic Betkub Helm chart integrate vault
-    digest: ffcc11eaba07168347d76c6eb4d8258b84f7957d6df2176ecccd2b2a210604b7
-    name: betkub-helm-chart
-    type: application
-    urls:
-    - https://github.com/betkub/devops-helm/releases/download/betkub-helm-chart-1.0.2/betkub-helm-chart-1.0.2.tgz
-    version: 1.0.2
-  - apiVersion: v2
-    appVersion: 1.0.0
     created: "2022-12-08T07:16:54.784996373Z"
     description: A Generic Betkub Helm chart
     digest: 53fdf866dad9b6bd3ae8d9a2a4184b08070529ef0bf6ff0abbe7496446080c0b
@@ -65,16 +45,6 @@ entries:
   huaylike-helm-chart:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2022-12-09T08:59:53.772984382Z"
-    description: A Generic Huaylike Helm chart integrate vault
-    digest: ca63f7cebb42cf24cc926f22b326ebfae03d35089fd2416e1b58217926f3786b
-    name: huaylike-helm-chart
-    type: application
-    urls:
-    - https://github.com/betkub/devops-helm/releases/download/huaylike-helm-chart-1.0.2/huaylike-helm-chart-1.0.2.tgz
-    version: 1.0.2
-  - apiVersion: v2
-    appVersion: 1.0.0
     created: "2022-09-29T04:27:24.400476976Z"
     description: A Generic Huaylike Helm chart
     digest: 41e153dc3aa109ce56208c798aec6c728e437b2c307f7d62a5411f6529e16897
@@ -94,16 +64,6 @@ entries:
     - https://github.com/betkub/devops-helm/releases/download/huaylike-helm-chart-1.0.0/huaylike-helm-chart-1.0.0.tgz
     version: 1.0.0
   unicorn-helm-chart:
-  - apiVersion: v2
-    appVersion: 1.0.0
-    created: "2022-12-06T05:43:50.114152063Z"
-    description: A Generic Unicorn Helm chart integrate vault
-    digest: e24f109798fc7fac7b3021a0e088534a2439198723a28bea990b8d49e5c4eea1
-    name: unicorn-helm-chart
-    type: application
-    urls:
-    - https://github.com/betkub/devops-helm/releases/download/unicorn-helm-chart-1.0.2/unicorn-helm-chart-1.0.2.tgz
-    version: 1.0.2
   - apiVersion: v2
     appVersion: 1.0.0
     created: "2022-08-25T17:00:17.675496027Z"
