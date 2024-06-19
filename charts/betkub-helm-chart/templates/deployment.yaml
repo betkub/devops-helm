@@ -52,14 +52,14 @@ spec:
             httpGet:
               path: {{ .Values.healthCheck }}
               port: http
-            timeoutSeconds: 3
-            periodSeconds: 5
+            timeoutSeconds: 1
+            periodSeconds: 3
           readinessProbe:
             httpGet:
               path: {{ .Values.healthCheck }}
               port: http
-            timeoutSeconds: 3
-            periodSeconds: 5
+            timeoutSeconds: 1
+            periodSeconds: 3
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       dnsConfig:
