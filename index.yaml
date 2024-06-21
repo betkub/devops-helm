@@ -3,6 +3,16 @@ entries:
   betkub-helm-chart:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2024-06-21T03:19:29.708701926Z"
+    description: A Generic Betkub Helm chart custom dnsConfig
+    digest: a1f45ab79e4234e8bd1467c8452052400c25d975b0cb6df05820ac8638196672
+    name: betkub-helm-chart
+    type: application
+    urls:
+    - https://github.com/betkub/devops-helm/releases/download/betkub-helm-chart-1.0.6/betkub-helm-chart-1.0.6.tgz
+    version: 1.0.6
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2024-06-19T10:59:12.457320973Z"
     description: A Generic Betkub Helm chart support HPA v2
     digest: 1fcbbf6dffc7a2dd753449dc2cc560f7b7bf48b47d55815762998c1dff2fc726
