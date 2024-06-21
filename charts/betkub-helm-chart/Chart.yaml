@@ -1,6 +1,6 @@
 apiVersion: v2
 name: betkub-helm-chart
-description: A Generic Betkub Helm chart support HPA v2
+description: A Generic Betkub Helm chart custom dnsConfig
 type: application
-version: 1.0.5
+version: 1.0.6
 appVersion: "1.0.0"
