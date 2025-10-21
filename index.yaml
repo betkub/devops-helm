@@ -82,6 +82,17 @@ entries:
     urls:
     - https://github.com/betkub/devops-helm/releases/download/chat-helm-chart-1.0.0/chat-helm-chart-1.0.0.tgz
     version: 1.0.0
+  hlk-helm-chart:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2025-10-21T10:10:54.432678009Z"
+    description: A Generic hlk Helm chart support HPA v2
+    digest: 859569287ce79408995d4fb0d3457c52fbe4c76d77c36d558813a2c89a5f3024
+    name: hlk-helm-chart
+    type: application
+    urls:
+    - https://github.com/betkub/devops-helm/releases/download/hlk-helm-chart-1.0.4/hlk-helm-chart-1.0.4.tgz
+    version: 1.0.4
   huaylike-helm-chart:
   - apiVersion: v2
     appVersion: 1.0.0
