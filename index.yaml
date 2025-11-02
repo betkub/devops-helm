@@ -82,6 +82,17 @@ entries:
     urls:
     - https://github.com/betkub/devops-helm/releases/download/chat-helm-chart-1.0.0/chat-helm-chart-1.0.0.tgz
     version: 1.0.0
+  eth-helm-chart:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2025-11-02T18:48:50.676410103Z"
+    description: A Generic eth Helm chart support HPA v2
+    digest: 2ee7526e88325d0b47b7b343af398219d86ef199dad2a52004f1d7dc0322263f
+    name: eth-helm-chart
+    type: application
+    urls:
+    - https://github.com/betkub/devops-helm/releases/download/eth-helm-chart-1.0.4/eth-helm-chart-1.0.4.tgz
+    version: 1.0.4
   hlk-helm-chart:
   - apiVersion: v2
     appVersion: 1.0.0
