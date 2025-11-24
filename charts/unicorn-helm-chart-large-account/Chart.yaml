@@ -1,6 +1,0 @@
-apiVersion: v2
-name: unicorn-helm-chart
-description: A Generic Unicorn Helm chart Ingress internal
-type: application
-version: 1.0.5
-appVersion: "1.0.0"
