@@ -1,6 +1,0 @@
-apiVersion: v2
-name: eth-helm-chart
-description: A Generic eth Helm chart support HPA v2
-type: application
-version: 1.0.4
-appVersion: "1.0.0"
