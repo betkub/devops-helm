@@ -82,17 +82,6 @@ entries:
     urls:
     - https://github.com/betkub/devops-helm/releases/download/chat-helm-chart-1.0.0/chat-helm-chart-1.0.0.tgz
     version: 1.0.0
-  engage-helm-chart:
-  - apiVersion: v2
-    appVersion: 1.0.0
-    created: "2026-01-07T04:58:47.066307918Z"
-    description: A Generic Engage Helm chart support HPA v2
-    digest: c74ccf648353ae7870e32d73162cd84e012978687aacaefc8fb187300a1a6a02
-    name: engage-helm-chart
-    type: application
-    urls:
-    - https://github.com/betkub/devops-helm/releases/download/engage-helm-chart-1.0.4/engage-helm-chart-1.0.4.tgz
-    version: 1.0.4
   eth-helm-chart:
   - apiVersion: v2
     appVersion: 1.0.0
