@@ -3,6 +3,16 @@ entries:
   betkub-helm-chart:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2026-01-08T07:32:04.737441923Z"
+    description: A Generic Betkub Helm chart that remove redirect 443
+    digest: f1bb87b741d5008e7390910601c81f86d96735e0345c6eb82ab706839d856349
+    name: betkub-helm-chart
+    type: application
+    urls:
+    - https://github.com/betkub/devops-helm/releases/download/betkub-helm-chart-1.0.7/betkub-helm-chart-1.0.7.tgz
+    version: 1.0.7
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2024-06-21T03:19:29.708701926Z"
     description: A Generic Betkub Helm chart custom dnsConfig
     digest: a1f45ab79e4234e8bd1467c8452052400c25d975b0cb6df05820ac8638196672
