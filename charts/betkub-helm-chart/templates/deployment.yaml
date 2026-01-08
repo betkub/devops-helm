@@ -52,20 +52,18 @@ spec:
             httpGet:
               path: {{ .Values.healthCheck }}
               port: http
-            timeoutSeconds: 1
-            periodSeconds: 3
+            timeoutSeconds: 10
           readinessProbe:
             httpGet:
               path: {{ .Values.healthCheck }}
               port: http
-            timeoutSeconds: 1
-            periodSeconds: 3
+            timeoutSeconds: 10
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       dnsConfig:
         options:
         - name: ndots
-          value: "2"
+          value: "3"
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
