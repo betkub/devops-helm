@@ -26,6 +26,8 @@ jobs:
           git config user.email "$GITHUB_ACTOR@betkub.com"
 
       - name: Run chart-releaser
-        uses: helm/chart-releaser-action@v1.1.0
+        uses: helm/chart-releaser-action@v1.6.0  # 1. เปลี่ยนเป็น v1.6.0 ขึ้นไป
+        with:
+          skip_existing: true                     # 2. เพิ่มบรรทัดนี้ เพื่อข้ามตัวที่ซ้ำ
         env:
           CR_TOKEN: "${{ secrets.PAT }}"
