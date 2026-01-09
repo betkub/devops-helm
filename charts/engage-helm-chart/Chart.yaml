@@ -1,6 +1,6 @@
 apiVersion: v2
 name: engage-helm-chart
-description: A Generic Engage Helm chart support grpc and http
+description: A Generic Engage Helm chart support grpc and http v1.0.6
 type: application
 version: 1.0.6
 appVersion: "1.0.0"
