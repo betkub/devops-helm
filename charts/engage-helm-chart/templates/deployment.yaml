@@ -45,16 +45,19 @@ spec:
               name: {{ .Values.name }}
           {{- end }}
           ports:
+            - name: grpc
+              containerPort: {{ .Values.grpcPort }}
+              protocol: TCP
             - name: http
               containerPort: {{ .Values.containerPort }}
               protocol: TCP
           livenessProbe:
             grpc:
-              port: {{ .Values.containerPort }}
+              port: {{ .Values.grpcPort }}
             timeoutSeconds: {{ .Values.healthCheckTimeout | default 10 }}
           readinessProbe:
             grpc:
-              port: {{ .Values.containerPort }}
+              port: {{ .Values.grpcPort }}
             timeoutSeconds: {{ .Values.healthCheckTimeout | default 10 }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}

@@ -7,8 +7,12 @@ metadata:
 spec:
   type: ClusterIP
   ports:
-    - port: {{ .Values.containerPort }}
-      targetPort: {{ .Values.containerPort }}
+    - port: 80
+      targetPort: http
+      protocol: TCP
+      name: http
+    - port: {{ .Values.grpcPort }}
+      targetPort: {{ .Values.grpcPort }}
       protocol: TCP
       name: grpc
   selector:

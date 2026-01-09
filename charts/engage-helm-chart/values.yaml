@@ -39,6 +39,8 @@ hpa:
 
 containerPort: 3000
 
+grpcPort: 50051
+
 healthCheck: /api/stat
 
 healthCheckTimeout: 10
