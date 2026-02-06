@@ -1,0 +1,6 @@
+apiVersion: v2
+name: hlk-helm-chart
+description: A Generic hlk Helm chart support HPA v2
+type: application
+version: 1.0.5
+appVersion: "1.0.0"
