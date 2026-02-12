@@ -64,6 +64,16 @@ entries:
   chat-helm-chart:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2026-02-12T03:07:05.354242024Z"
+    description: A Generic Chat Helm chart support HPA v2
+    digest: 50beb6603d1189b807cfd713ce5da1816816d130283b9015626c0dafb6deee64
+    name: chat-helm-chart
+    type: application
+    urls:
+    - https://github.com/betkub/devops-helm/releases/download/chat-helm-chart-1.0.5/chat-helm-chart-1.0.5.tgz
+    version: 1.0.5
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2023-12-18T06:56:45.424023219Z"
     description: A Generic Chat Helm chart support HPA v2
     digest: a68a6926756cbb860bf27cc9d3fac711fc42627e0d9fc90652fd7a9e944995ec
@@ -217,4 +227,4 @@ entries:
     urls:
     - https://github.com/betkub/devops-helm/releases/download/unicorn-helm-chart-1.0.0/unicorn-helm-chart-1.0.0.tgz
     version: 1.0.0
-generated: "2026-02-06T19:12:06.918671675Z"
+generated: "2026-02-12T03:07:05.354297957Z"
