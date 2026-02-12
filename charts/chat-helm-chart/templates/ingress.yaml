@@ -12,7 +12,7 @@ metadata:
     alb.ingress.kubernetes.io/group.name: {{ .Values.ingress.groupName }}
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
     alb.ingress.kubernetes.io/ssl-redirect: '443'
-    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-southeast-1:716687806003:certificate/c989cac6-065f-494a-82df-f664cf98eae0
+    alb.ingress.kubernetes.io/certificate-arn: {{ .Values.ingress.certificateArn }}
 spec:
   ingressClassName: {{ .Values.ingress.class }}
   rules:

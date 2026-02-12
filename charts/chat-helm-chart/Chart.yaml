@@ -2,5 +2,5 @@ apiVersion: v2
 name: chat-helm-chart
 description: A Generic Chat Helm chart support HPA v2
 type: application
-version: 1.0.4
+version: 1.0.5
 appVersion: "1.0.0"
