@@ -43,4 +43,6 @@ grpcPort: 50051
 
 healthCheck: /api/stat
 
+healthCheckType: grpc  # grpc or http
+
 healthCheckTimeout: 30
