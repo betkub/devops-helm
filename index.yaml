@@ -105,6 +105,17 @@ entries:
   engage-helm-chart:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2026-04-22T07:41:55.499876883Z"
+    description: A Generic Engage Helm chart with configurable gRPC or HTTP health
+      checks
+    digest: 10d14e526633909eb3e6990e5780bdf958c353965ec1e33759f2a72a87c6a08b
+    name: engage-helm-chart
+    type: application
+    urls:
+    - https://github.com/betkub/devops-helm/releases/download/engage-helm-chart-1.0.8/engage-helm-chart-1.0.8.tgz
+    version: 1.0.8
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2026-02-16T08:27:49.05311405Z"
     description: A Generic Engage Helm chart with configurable gRPC or HTTP health
       checks
@@ -238,4 +249,4 @@ entries:
     urls:
     - https://github.com/betkub/devops-helm/releases/download/unicorn-helm-chart-1.0.0/unicorn-helm-chart-1.0.0.tgz
     version: 1.0.0
-generated: "2026-02-16T08:27:49.053169373Z"
+generated: "2026-04-22T07:41:55.499925686Z"
