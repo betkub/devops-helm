@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
           fetch-tags: true
@@ -26,7 +26,7 @@ jobs:
           git config user.email "$GITHUB_ACTOR@betkub.com"
 
       - name: Run chart-releaser
-        uses: helm/chart-releaser-action@v1.6.0  # 1. เปลี่ยนเป็น v1.6.0 ขึ้นไป
+        uses: helm/chart-releaser-action@v1.7.0
         with:
           skip_existing: true                     # 2. เพิ่มบรรทัดนี้ เพื่อข้ามตัวที่ซ้ำ
         env:
