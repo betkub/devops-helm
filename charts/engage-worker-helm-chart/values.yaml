@@ -1,0 +1,44 @@
+name:
+
+image:
+  name:
+  tag:
+
+# Single-writer workers (e.g. advisory-lock leader election) must stay at 1.
+replicas: 1
+
+# Seconds to wait for the worker to finish after SIGTERM.
+terminationGracePeriodSeconds: 60
+
+nodeSelector:
+  tier:
+
+resources:
+  limits:
+    cpu: 500m
+    memory: 512Mi
+  requests:
+    cpu: 250m
+    memory: 256Mi
+
+configmap:
+  enabled: false
+
+secret:
+  enabled: false
+
+podAnnotations: {}
+
+tolerations: []
+
+affinity: {}
+
+# No probes by default: workers here have no HTTP endpoint to hit.
+# Optionally provide a full probe spec (exec or tcpSocket), e.g.
+# livenessProbe:
+#   exec:
+#     command: ["node", "scripts/check-heartbeat.js"]
+#   initialDelaySeconds: 10
+#   periodSeconds: 30
+livenessProbe: {}
+readinessProbe: {}

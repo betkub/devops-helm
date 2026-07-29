@@ -1,0 +1,27 @@
+# Example values for the spike-routing-dispatcher single-writer worker.
+# ConfigMap/Secret named "spike-routing-dispatcher" must exist in the namespace:
+#   ConfigMap: ROLE=dispatcher
+#   Secret:    DATABASE_URL (direct Postgres, session mode — no PgBouncer
+#              transaction pooling), REDIS_URL
+name: "spike-routing-dispatcher"
+image:
+  name: "716687806003.dkr.ecr.ap-southeast-1.amazonaws.com/spike-routing"
+  tag: "develop-0000000"
+replicas: 1
+terminationGracePeriodSeconds: 60
+nodeSelector:
+  tier: "betkub"
+resources:
+  limits:
+    cpu: 500m
+    memory: 512Mi
+  requests:
+    cpu: 150m
+    memory: 192Mi
+configmap:
+  enabled: true
+secret:
+  enabled: true
+podAnnotations: {}
+tolerations: []
+affinity: {}

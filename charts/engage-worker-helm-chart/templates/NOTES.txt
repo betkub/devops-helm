@@ -1,0 +1,8 @@
+{{ .Values.name }} deployed as a background worker (no Service / Ingress / HPA).
+
+- replicas: {{ .Values.replicas }} (strategy: Recreate — old pod is stopped before a new one starts)
+- graceful shutdown: SIGTERM with terminationGracePeriodSeconds={{ .Values.terminationGracePeriodSeconds }}
+
+If this worker is a single-writer (advisory-lock leader election), keep replicas at 1
+and make sure DATABASE_URL points to Postgres in session mode (not PgBouncer
+transaction pooling — advisory locks are bound to the session).
