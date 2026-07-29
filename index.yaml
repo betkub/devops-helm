@@ -145,6 +145,18 @@ entries:
     urls:
     - https://github.com/betkub/devops-helm/releases/download/engage-helm-chart-1.0.4/engage-helm-chart-1.0.4.tgz
     version: 1.0.4
+  engage-worker-helm-chart:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2026-07-29T15:41:06.411986+07:00"
+    description: A Helm chart for background workers with no HTTP listener (single-writer
+      friendly, Deployment only)
+    digest: 0c4ce93d7cbfe52592da72e95e8619a94a2b8ccec5c3c129cbf69e4e742bfda0
+    name: engage-worker-helm-chart
+    type: application
+    urls:
+    - https://github.com/betkub/devops-helm/releases/download/engage-worker-helm-chart-1.0.0/engage-worker-helm-chart-1.0.0.tgz
+    version: 1.0.0
   eth-helm-chart:
   - apiVersion: v2
     appVersion: 1.0.0
@@ -249,4 +261,4 @@ entries:
     urls:
     - https://github.com/betkub/devops-helm/releases/download/unicorn-helm-chart-1.0.0/unicorn-helm-chart-1.0.0.tgz
     version: 1.0.0
-generated: "2026-04-22T07:41:55.499925686Z"
+generated: "2026-07-29T15:41:06.411282+07:00"
