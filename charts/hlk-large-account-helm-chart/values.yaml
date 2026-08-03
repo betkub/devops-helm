@@ -37,6 +37,8 @@ ingress:
 hpa:
   minReplicas: 2
   maxReplicas: 20
+  cpuTargetUtilization: 80
+  memoryTargetUtilization: 80
 
 containerPort: 3000
 
