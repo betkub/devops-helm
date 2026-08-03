@@ -181,6 +181,16 @@ entries:
   hlk-helm-chart:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2026-08-03T11:15:27.852982704Z"
+    description: A Generic hlk Helm chart support HPA v2
+    digest: d250a63a617b6ca23e3a41fefa4c7cbc928ef9a03446f07dd9ae85e125e0812d
+    name: hlk-helm-chart
+    type: application
+    urls:
+    - https://github.com/betkub/devops-helm/releases/download/hlk-helm-chart-1.0.6/hlk-helm-chart-1.0.6.tgz
+    version: 1.0.6
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2026-02-06T19:12:06.918634947Z"
     description: A Generic hlk Helm chart support HPA v2
     digest: 31a10c9efadcf9880448539c944dd7e72d93dcadf5d4a921cf7ba9fe523e4035
@@ -271,4 +281,4 @@ entries:
     urls:
     - https://github.com/betkub/devops-helm/releases/download/unicorn-helm-chart-1.0.0/unicorn-helm-chart-1.0.0.tgz
     version: 1.0.0
-generated: "2026-08-03T17:50:14.04763699+07:00"
+generated: "2026-08-03T11:15:27.85302002Z"
