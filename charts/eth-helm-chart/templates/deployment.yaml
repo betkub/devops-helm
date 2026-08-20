@@ -1,0 +1,89 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.name }}
+  labels:
+    app: {{ .Values.name }}
+  annotations:
+    reloader.stakater.com/auto: "true"
+spec:
+  selector:
+    matchLabels:
+      app: {{ .Values.name }}
+  template:
+    metadata:
+    {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
+      labels:
+        app: {{ .Values.name }}
+    spec:
+      # ค่า default 30 เท่ากับ default ของ k8s อยู่แล้ว ⇒ service ที่ยังไม่ตั้งอะไร
+      # ไม่เปลี่ยนพฤติกรรมเลยตอน bump มา 1.0.5
+      terminationGracePeriodSeconds: {{ .Values.terminationGracePeriodSeconds | default 30 }}
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            podAffinityTerm:
+              labelSelector:
+                matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                  - "{{ .Values.name }}"
+              topologyKey: "kubernetes.io/hostname"
+      containers:
+        - name: {{ .Values.name }}
+          image: "{{ .Values.image.name }}:{{ .Values.image.tag }}"
+          imagePullPolicy: IfNotPresent
+          envFrom:
+          {{- if .Values.configmap.enabled }}
+          - configMapRef:
+              name: {{ .Values.name }}
+          {{- end }}
+          {{- if .Values.secret.enabled }}
+          - secretRef:
+              name: {{ .Values.name }}
+          {{- end }}
+          ports:
+            - name: http
+              containerPort: {{ .Values.containerPort }}
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: {{ .Values.healthCheck }}
+              port: http
+            timeoutSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: {{ .Values.healthCheck }}
+              port: http
+            timeoutSeconds: 10
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          # preStop เป็น opt-in (default ว่าง) — ใส่ผ่าน values ต่อ service
+          # ใช้แก้อาการ connection ถูกตัดกลางคันตอน scale-down/rolling deploy:
+          # ALB (target-type: ip) ยังส่ง request ใหม่เข้ามาระหว่างที่ยัง deregister
+          # ไม่เสร็จ · หน่วงให้ pod อยู่ต่ออีกครู่ก่อนรับ SIGTERM ⇒ ALB ถอนออกทัน
+          {{- with .Values.lifecycle }}
+          lifecycle:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+      dnsConfig:
+        options:
+        - name: ndots
+          value: "3"
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}

@@ -1,0 +1,58 @@
+name:
+
+image:
+  name:
+  tag:
+
+nodeSelector:
+  tier:
+
+resources:
+  limits:
+    cpu: 500m
+    memory: 512Mi
+  requests:
+    cpu: 250m
+    memory: 256Mi
+
+configmap:
+  enabled: false
+
+secret:
+  enabled: false
+
+podAnnotations: []
+
+# หน่วงก่อนส่ง SIGKILL — 30 คือค่าเดียวกับ default ของ k8s (ไม่เปลี่ยนพฤติกรรมเดิม)
+terminationGracePeriodSeconds: 30
+
+# opt-in ต่อ service เช่น
+#   lifecycle:
+#     preStop:
+#       exec:
+#         command: ["/bin/sh", "-c", "sleep 10"]
+lifecycle: {}
+
+tolerations: []
+
+affinity: {}
+
+ingress:
+  enabled: false
+  class: alb
+  albName:
+  hosts: []
+  # annotation เพิ่มเติม เช่น
+  #   annotations:
+  #     alb.ingress.kubernetes.io/target-group-attributes: deregistration_delay.timeout_seconds=15
+  annotations: {}
+
+hpa:
+  minReplicas: 2
+  maxReplicas: 20
+
+containerPort: 3000
+
+healthCheck: /api/stat
+
+healthCheckTimeout: 10
