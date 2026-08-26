@@ -19,6 +19,16 @@ spec:
       labels:
         app: {{ .Values.name }}
     spec:
+      # EKS Pod Identity ผูกสิทธิ์ที่ (cluster, namespace, serviceAccount)
+      # ⇒ ไม่ตั้งค่านี้ = pod รันด้วย SA `default` แล้วไม่ได้ role อะไรเลย
+      # และแอปจะ fallback ไปหา AWS_ACCESS_KEY_ID ใน env แทนแบบเงียบ ๆ
+      #
+      # ใส่เฉพาะเมื่อมีคนสั่งจริง (create: true หรือระบุ name มา) — ถ้าใส่เสมอ
+      # release ที่ไม่ได้ตั้งอะไรจะชี้ไป SA ที่ไม่มีอยู่ แล้ว pod จะไม่ถูก schedule
+      # ด้วย error ที่ไม่ได้บอกว่าเกิดจาก chart
+      {{- if or .Values.serviceAccount.create .Values.serviceAccount.name }}
+      serviceAccountName: {{ .Values.serviceAccount.name | default .Values.name }}
+      {{- end }}
       # ค่า default 30 เท่ากับ default ของ k8s อยู่แล้ว ⇒ service ที่ยังไม่ตั้งอะไร
       # ไม่เปลี่ยนพฤติกรรมเลยตอน bump มา 1.0.5
       terminationGracePeriodSeconds: {{ .Values.terminationGracePeriodSeconds | default 30 }}
