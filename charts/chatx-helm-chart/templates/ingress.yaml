@@ -1,0 +1,34 @@
+{{- if .Values.ingress.enabled -}}
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ .Values.name }}
+  labels:
+    app: {{ .Values.name }}
+  annotations:
+    alb.ingress.kubernetes.io/scheme: internal
+    alb.ingress.kubernetes.io/target-type: ip
+    alb.ingress.kubernetes.io/group.name: {{ .Values.ingress.albName }}
+    # annotation เพิ่มเติมต่อ service — วางท้ายสุดเพื่อให้ override 3 ตัวข้างบนได้
+    # ถ้าจำเป็น · ที่ต้องมี: target-group-attributes ตั้ง deregistration_delay
+    {{- with .Values.ingress.annotations }}
+    {{- toYaml . | nindent 4 }}
+    {{- end }}
+spec:
+  ingressClassName: {{ .Values.ingress.class }}
+  rules:
+    {{- range .Values.ingress.hosts }}
+    - host: {{ .host | quote }}
+      http:
+        paths:
+          {{- range .paths }}
+          - path: {{ .path }}
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ .serviceName }}
+                port:
+                  number: 80
+          {{- end }}
+    {{- end }}
+{{- end }}

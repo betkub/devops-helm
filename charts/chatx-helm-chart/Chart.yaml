@@ -1,0 +1,6 @@
+apiVersion: v2
+name: chatx-helm-chart
+description: A Generic chatx Helm chart support HPA v2
+type: application
+version: 1.0.5
+appVersion: "1.0.0"
