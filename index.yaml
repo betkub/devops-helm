@@ -115,6 +115,16 @@ entries:
   chatx-helm-chart:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2026-08-26T11:57:19.976291818Z"
+    description: A Generic chatx Helm chart support HPA v2
+    digest: 8ba180c3b54e891981c30c51d8cdbae50bac3c8b14e09821c6e7b708b592ec4a
+    name: chatx-helm-chart
+    type: application
+    urls:
+    - https://github.com/betkub/devops-helm/releases/download/chatx-helm-chart-1.0.6/chatx-helm-chart-1.0.6.tgz
+    version: 1.0.6
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2026-08-26T09:39:20.465655401Z"
     description: A Generic chatx Helm chart support HPA v2
     digest: 9795c5f10ac23c1ad0eff1f0c7e8b03141918a0e6cab0811898bd539006c50ff
@@ -302,4 +312,4 @@ entries:
     urls:
     - https://github.com/betkub/devops-helm/releases/download/unicorn-helm-chart-1.0.0/unicorn-helm-chart-1.0.0.tgz
     version: 1.0.0
-generated: "2026-08-26T09:39:20.465716535Z"
+generated: "2026-08-26T11:57:19.976344005Z"
