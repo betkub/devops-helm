@@ -56,3 +56,9 @@ containerPort: 3000
 healthCheck: /api/stat
 
 healthCheckTimeout: 10
+
+# ServiceAccount ที่ pod ใช้ — ตัวที่ EKS Pod Identity ผูกสิทธิ์ให้
+# create: false = ใช้ SA ที่มีอยู่แล้ว (ไม่สร้างใหม่) · name ว่าง = ใช้ชื่อเดียวกับ .Values.name
+serviceAccount:
+  create: false
+  name: ""
