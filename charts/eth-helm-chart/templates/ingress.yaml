@@ -1,4 +1,12 @@
 {{- if .Values.ingress.enabled -}}
+{{/*
+  ⚠️ ห้าม hardcode annotation ที่ service อาจต้อง override ไว้ในบล็อกข้างล่างแล้วหวังพึ่ง
+  `.Values.ingress.annotations` ที่วางท้ายสุดให้ชนะ — YAML duplicate key ไม่ได้เป็น last-wins
+  ทุก renderer: kustomize v4.5.7 (ที่ ArgoCD 2.6.2 ฝังไว้) เป็น first-wins ส่วน v5.2.1/v5.5.0
+  เป็น last-wins ⇒ บนคลัสเตอร์จริงค่า hardcode จะชนะ แล้ว ALB controller ขึ้น FailedBuildModel
+  ถ้า scheme ไม่ตรงกับ IngressGroup ซึ่งบล็อก reconcile ของทั้งกลุ่ม (เกิดจริงกับ eth-ga28 2026-09-04)
+  ⇒ ทุกค่าที่ service ต้อง override ได้ ต้องเป็น value ที่มี default ไม่ใช่บรรทัดตายตัว
+*/}}
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
@@ -6,11 +14,9 @@ metadata:
   labels:
     app: {{ .Values.name }}
   annotations:
-    alb.ingress.kubernetes.io/scheme: internal
-    alb.ingress.kubernetes.io/target-type: ip
+    alb.ingress.kubernetes.io/scheme: {{ .Values.ingress.scheme | default "internal" }}
+    alb.ingress.kubernetes.io/target-type: {{ .Values.ingress.targetType | default "ip" }}
     alb.ingress.kubernetes.io/group.name: {{ .Values.ingress.albName }}
-    # annotation เพิ่มเติมต่อ service — วางท้ายสุดเพื่อให้ override 3 ตัวข้างบนได้
-    # ถ้าจำเป็น · ที่ต้องมี: target-group-attributes ตั้ง deregistration_delay
     {{- with .Values.ingress.annotations }}
     {{- toYaml . | nindent 4 }}
     {{- end }}
