@@ -42,8 +42,17 @@ ingress:
   class: alb
   albName:
   hosts: []
-  # annotation เพิ่มเติม เช่น
+  # scheme ต้องตรงกับ IngressGroup ที่ albName ชี้ ไม่งั้น ALB controller จะขึ้น
+  # FailedBuildModel แล้วบล็อก reconcile ของทั้งกลุ่ม
+  # ตั้งที่นี่เท่านั้น ห้ามใส่ใน annotations ข้างล่าง (จะกลายเป็น duplicate key
+  # ซึ่ง kustomize v4.5.7 ของ ArgoCD 2.6.2 เลือกตัวแรก = ค่า default ชนะ)
+  scheme: internal
+  targetType: ip
+  # annotation เพิ่มเติม สำหรับคีย์ที่ไม่มีข้างบน เช่น
   #   annotations:
+  #     alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:...
+  #     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
+  #     alb.ingress.kubernetes.io/ssl-redirect: "443"
   #     alb.ingress.kubernetes.io/target-group-attributes: deregistration_delay.timeout_seconds=15
   annotations: {}
 
