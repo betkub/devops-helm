@@ -191,6 +191,16 @@ entries:
   eth-helm-chart:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2026-09-04T10:51:34.431868991Z"
+    description: A Generic eth Helm chart support HPA v2
+    digest: 415ce07679499e1d7c62254854b141436ecddd61b979d4b0101716c845c22d3f
+    name: eth-helm-chart
+    type: application
+    urls:
+    - https://github.com/betkub/devops-helm/releases/download/eth-helm-chart-1.0.6/eth-helm-chart-1.0.6.tgz
+    version: 1.0.6
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2026-08-20T09:27:27.404060857Z"
     description: A Generic eth Helm chart support HPA v2
     digest: 773673f1312f9f5d10295a50ef3059043679bff0959f0d3d258ac48ece51f958
@@ -312,4 +322,4 @@ entries:
     urls:
     - https://github.com/betkub/devops-helm/releases/download/unicorn-helm-chart-1.0.0/unicorn-helm-chart-1.0.0.tgz
     version: 1.0.0
-generated: "2026-08-26T11:57:19.976344005Z"
+generated: "2026-09-04T10:51:34.431929063Z"
